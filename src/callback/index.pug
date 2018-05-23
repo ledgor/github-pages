@@ -1,0 +1,14 @@
+doctype html
+html(lang="en")
+	head
+		title Ledgor
+	body
+		h1 Ledgor
+
+		h3 Oauth Callback
+
+		p Please enter the following code into ledgor
+
+		div(data-controller='token')
+			input(type='text' data-target='token.field' readonly)
+			button(data-action='token#copy') Copy to Clipboard

@@ -1,0 +1,42 @@
+{
+  "name": "ledgor-github-pages",
+  "version": "1.0.0",
+  "description": "Github pages for the ledgor project",
+  "main": "src/index.js",
+  "repository": "git@github.com:ledgor/github-pages.git",
+  "author": "Joakim Reinert <mail@jreinert.com>",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.47",
+    "@babel/plugin-proposal-class-properties": "^7.0.0-beta.47",
+    "@babel/plugin-transform-runtime": "^7.0.0-beta.47",
+    "@babel/preset-env": "^7.0.0-beta.47",
+    "babel-loader": "^8.0.0-beta",
+    "css-loader": "^0.28.11",
+    "eslint": "^4.19.1",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.4.0",
+    "node-sass": "^4.9.0",
+    "optimize-css-assets-webpack-plugin": "^4.0.1",
+    "pug": "^2.0.3",
+    "pug-loader": "^2.4.0",
+    "sass-loader": "^7.0.1",
+    "style-loader": "^0.21.0",
+    "uglifyjs-webpack-plugin": "^1.2.5",
+    "webpack": "^4.8.3",
+    "webpack-cli": "^2.1.4",
+    "webpack-merge": "^4.1.2",
+    "webpack-serve": "^1.0.2"
+  },
+  "scripts": {
+    "build": "rm -r dist/* && NODE_ENV=production node_modules/webpack-cli/bin/webpack.js -p",
+    "watch": "node_modules/webpack-serve/cli.js",
+	"deploy": "yarn build && cd dist && git commit -a && git push origin master"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.0.0-beta.47",
+    "query-string": "^6.1.0",
+    "stimulus": "^1.0.1"
+  }
+}
